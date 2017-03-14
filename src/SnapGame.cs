@@ -11,6 +11,9 @@ namespace CardGames
             Bitmap cards;
             cards = SwinGame.LoadBitmapNamed ("Cards", "Cards.png");
             SwinGame.BitmapSetCellDetails (cards, 167, 250, 13, 5, 53);      // set the cells in the bitmap to match the cards
+			SwinGame.LoadSoundEffectNamed ("Slap", "slap.wav");
+			SwinGame.LoadSoundEffectNamed ("Slap2", "slap2.wav");
+			SwinGame.LoadSoundEffectNamed ("Slap3", "slap3.wav");
         }
 
 		/// <summary>
@@ -29,7 +32,7 @@ namespace CardGames
 
 			if (myGame.IsStarted) {
 				if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT)) {
-					//TODO: add sounds
+					SwinGame.PlaySoundEffect ("Slap");
 				} else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT)) {
 					myGame.PlayerHit (0);
 				} else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT)) {

@@ -144,8 +144,9 @@ namespace CardGames.GameLogic
 				 _topCards [0] != null && _topCards [0].Rank == _topCards [1].Rank) // and its a match
 			{
 				_score [player]++;
-				//TODO: consider playing a sound here...
+				SwinGame.PlaySoundEffect ("Slap2");
 			} else if (player >= 0 && player < _score.Length) {
+				SwinGame.PlaySoundEffect ("Slap3");
 				_score [player]--;
 			}
 
